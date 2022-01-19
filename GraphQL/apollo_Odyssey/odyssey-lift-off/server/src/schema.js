@@ -14,7 +14,7 @@ const typeDefs = gql`
   type IncrementTrackViewsResponse {
     "Similar to HTTP status code, respresents the status of the mutation"
     code: Int!
-    "Indicates whether tthe mutation was successful"
+    "Indicates whether the mutation was successful"
     success: Boolean!
     "Human-readable message for the UI"
     message: String!
