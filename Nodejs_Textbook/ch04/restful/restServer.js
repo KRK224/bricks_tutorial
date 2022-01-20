@@ -16,7 +16,7 @@ http.createServer(async (req, res) =>{
         res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'});
         return res.end(data);
       } else if (req.url ==='/users') {
-        res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'});
+        res.writeHead(201, {'Content-Type': 'text/html; charset=utf-8'});
         return res.end(JSON.stringify(users));
       }
 
@@ -35,7 +35,7 @@ http.createServer(async (req, res) =>{
 
         return req.on('end', ()=>{
           console.log('POST 본문(Body):', body);
-          const { name } =JSON.parse(body);
+          const { name } = JSON.parse(body);
           const id = Date.now();
           users[id] = name;
           res.writeHead(201);
