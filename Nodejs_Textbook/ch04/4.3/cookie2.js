@@ -14,9 +14,10 @@ const parseCookies = ( cookie='') =>
 
 http.createServer(async (req, res) =>{
   const cookies = parseCookies(req.headers.cookie);
+  // console.log(cookies);
 
   // 주소가 /login으로 시작하는 경우
-  if(req.url.startsWith('./login')) {
+  if(req.url.startsWith('/login')) {
     const {query} = url.parse(req.url);
     const {name} = qs.parse(query);
     const expires = new Date();
@@ -38,7 +39,7 @@ http.createServer(async (req, res) =>{
       res.writeHead(200, {
         'Content-Type': 'text/html; charset=utf-8'
       });
-      res.end();
+      res.end(data);
     } catch(err) {
       res.writeHead(500, {'Content-Type': 'text/plain; charset=utf-8'});
       res.end(err.message);
