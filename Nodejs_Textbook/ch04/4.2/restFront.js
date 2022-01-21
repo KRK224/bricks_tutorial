@@ -45,7 +45,7 @@ async function getUser() { // 로딩 시 사용자 정보를 가져오는 함수
   }
 }
 
-window.onload = getuser;
+window.onload = getUser;
 
 document.getElementById('form').addEventListener('submit', async (e)=>{
   e.preventDefault();
